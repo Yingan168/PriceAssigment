@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pricing Plans</h1>
+        <p>Start building for free, then add a site plan to go live. Account</p>
+        <p>plans unlock additional features.</p>
+        
+        <div class="billing-toggle">
+            <button id="monthly" class="active">Monthly billing</button>
+            <button id="yearly">Yearly billing</button>
+        </div>
+
+        <div class="plans">
+            <div class="plan">
+                <h2>Hobby</h2>
+                <p class="description">All the basics for starting a new 
+                    business!</p>
+                <p class="price" id="hobby-price">$12<span>/month</span></p>
+                <button class="subscribe">Subscribe</button>
+            </div>
+            <div class="plan highlighted">
+                <h2>Freelancer</h2>
+                <p class="description">All the basics for starting a new business!</p>
+                <p class="price" id="freelancer-price">$24<span>/month</span></p>
+                <button class="subscribe">Subscribe</button>
+            </div>
+            <div class="plan">
+                <h2>Startup</h2>
+                <p class="description">All the basics for starting a new business!</p>
+                <p class="price" id="startup-price">$32<span>/month</span></p>
+                <button class="subscribe">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('monthly').addEventListener('click', function() {
+            document.getElementById('hobby-price').innerHTML = "$12<span>/month</span>";
+            document.getElementById('freelancer-price').innerHTML = "$24<span>/month</span>";
+            document.getElementById('startup-price').innerHTML = "$32<span>/month</span>";
+            this.classList.add('active');
+            document.getElementById('yearly').classList.remove('active');
+        });
+
+        document.getElementById('yearly').addEventListener('click', function() {
+            document.getElementById('hobby-price').innerHTML = "$100<span>/year</span>";
+            document.getElementById('freelancer-price').innerHTML = "$200<span>/year</span>";
+            document.getElementById('startup-price').innerHTML = "$300<span>/year</span>";
+            this.classList.add('active');
+            document.getElementById('monthly').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
